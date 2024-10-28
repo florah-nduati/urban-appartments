@@ -20,12 +20,12 @@ body {
 }
 
 .urban-logo {
-  width: 100%;
-  max-width: 400px; /* Limit max width for larger screens */
+  width: 100%; /* Make logo responsive */
+  max-width: 400px; /* Maintain maximum width */
   height: auto; /* Maintain aspect ratio */
 }
 
-/* Header Stylings */
+/*header stylings*/
 .header {
   display: flex;
   justify-content: space-between;
@@ -34,7 +34,7 @@ body {
   background-color: burlywood;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 43.75em) {
   .header {
     flex-direction: column;
     gap: 2rem;
@@ -54,15 +54,15 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: left;
-  gap: 2rem;
+  gap: 15rem;
   text-transform: capitalize;
   color: black;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 37.5em) {
   .header-nav-list {
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2rem;
     justify-content: center;
   }
 }
@@ -82,6 +82,11 @@ body {
 .scroll-to-top {
   text-decoration: none;
   background-color: brown;
+  size: 5rem;
+  display: block;
+  width: 5rem; /* Set a fixed width */
+  height: 5rem; /* Set a fixed height */
+  color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,29 +95,38 @@ body {
   position: fixed;
   bottom: 2rem;
   right: 4rem;
-  z-index: 1000;
+  z-index: 1000000000000;
 }
 
-/* Hero Section Stylings */
+/*end of header stylings*/
+
+/*hero-section stylings*/
 .hero-section {
   height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(./assets/hero.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+    url(./assets/hero.jpg);
   background-size: cover;
   background-position: center;
+  margin-bottom: 3px;
 }
 
 .textbox {
   text-align: center;
-  width: 100%; /* Full width */
-  max-width: 600px; /* Limit maximum width */
+  width: 60%;
 }
 
 @media screen and (max-width: 75em) {
   .textbox {
     width: 80%;
+  }
+}
+
+@media screen and (max-width: 56.25em) {
+  .textbox {
+    width: 98%;
   }
 }
 
@@ -124,9 +138,15 @@ body {
   letter-spacing: 1.5px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 43.75em) {
   .hero-title {
-    font-size: 2.5rem; /* Adjusted font size */
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: 31.25em) {
+  .hero-title {
+    font-size: 4rem;
   }
 }
 
@@ -137,24 +157,24 @@ body {
   background-color: brown;
   color: blanchedalmond;
   display: inline-block;
-  border-radius: 0;
+  border-radius: 0%;
   padding: 1rem;
 }
 
-/* About Section Stylings */
+/*end of hero-section stylings*/
+
+/*about stylings*/
 .about-section {
   display: flex;
   padding: 2rem 1rem;
   align-items: center;
   border: 2px solid burlywood;
   background-color: burlywood;
-  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
   gap: 2rem;
 }
 
 .about-textbox {
-  width: 100%; /* Full width */
-  max-width: 600px; /* Limit maximum width */
+  width: 50%;
   display: flex;
   border: 2px solid burlywood;
   flex-direction: column;
@@ -172,6 +192,7 @@ body {
   background-color: brown;
   display: block;
   text-align: center;
+  align-items: center;
   text-transform: capitalize;
   margin-top: 2rem;
   padding: 1rem;
@@ -182,39 +203,61 @@ body {
   border: 2px solid burlywood;
 }
 
+.image {
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  max-width: 700px; /* Maintain maximum width */
+  object-fit: cover;
+}
+
 .about-image {
   width: 100%;
   border: 2px solid brown;
   object-fit: cover;
 }
 
-/* Spaces Section Stylings */
+/*end of about stylings*/
+
+/*spaces stylings*/
 .spaces-section {
   padding: 2rem;
 }
 
 .spaces-container {
   display: flex;
-  padding-inline: 1rem; /* Adjust for mobile padding */
+  padding-inline: 3rem;
   background-color: burlywood;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: space-between;
+  margin-block: 2rem;
 }
 
 .spaces-room-card {
   display: flex;
+  align-items: stretch;
   border: 2px solid red;
+  flex: 1 1 20%;
+  max-width: 25rem; /* Maintain maximum width */
   flex-direction: column;
   border-radius: 5px;
   background-color: darksalmon;
   overflow: hidden;
   margin: 10px;
-  flex: 1 1 200px; /* Flexible size for cards */
+}
+
+.space-card-image {
+  width: 100%;
+  height: 30%;
+  background-position: bottom;
 }
 
 .spaces-card-details {
   padding: 1rem;
+  width: fit-content;
 }
 
 .spaces-card-title {
@@ -228,6 +271,12 @@ body {
 .spaces-card-description {
   padding: 1rem;
   line-height: 1.4;
+}
+
+.spaces-card-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .spaces-item-cta {
@@ -245,9 +294,15 @@ body {
   border-radius: 20px;
 }
 
+.spaces-item-price {
+  text-transform: uppercase;
+  font-size: 0.5rem;
+}
+
 .spaces-section-link {
   text-decoration: none;
   text-transform: uppercase;
+  margin-top: 3rem;
   margin: 2rem auto;
   background-color: brown;
   color: blanchedalmond;
@@ -258,7 +313,9 @@ body {
   width: max-content;
 }
 
-/* Amenities Stylings */
+/*end of spaces stylings*/
+
+/*amenities stylings*/
 .amenities-container {
   display: flex;
   flex-wrap: wrap;
@@ -277,7 +334,20 @@ body {
   background-color: #f4f4f4;
   border: 1px solid #ccc;
   border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.amenity-card video {
+  width: 100%;
+  height: 180px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.amenity-card p {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  margin: 0;
 }
 
 .contact-us-section {
@@ -287,13 +357,13 @@ body {
 
 .contact-us-container {
   display: flex;
-  flex-direction: column; /* Stack items on small screens */
+  justify-content: space-between;
   background-color: burlywood;
 }
 
 .contact-us {
   display: flex;
-  width: 100%; /* Full width */
+  width: 55%;
   gap: 2rem;
   justify-content: center;
 }
@@ -308,72 +378,91 @@ body {
 }
 
 .social-link {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column-reverse;
+  --size: 5rem;
   text-decoration: none;
+  width: var(--size);
+  height: var(--size);
   border: 2px bisque;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s;
 }
 
-.social-link:hover {
-  transform: rotateX(90deg);
-  background-color: rgba(0, 0, 0, 0.856);
-}
-
-.social-link i {
-  font-size: 2.5rem;
-  color: rgb(145, 0, 0);
-}
-
-.contact-form-container {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f4f4f4;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form {
+.social-icons {
+  text-align: center;
+  justify-content: space-between;
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  gap: 10px;
+  font-size: 2rem;
 }
 
-.contact-form label {
-  font-size: 14px;
-  font-weight: bold;
-  color: #333;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: brown;
-  outline: none;
-}
-
-.contact-form button {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: brown;
-  color: blanchedalmond;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
+/* Footer styles */
+footer {
+  padding: 2rem;
   background-color: darkred;
+  color: blanchedalmond;
+  text-align: center;
+}
+
+footer .footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+footer .footer-links {
+  margin: 0.5rem 0;
+}
+
+footer a {
+  color: blanchedalmond;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer .copyright {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 30em) {
+  .contact-us-container {
+    flex-direction: column; /* Stack columns on smaller screens */
+  }
+
+  .contact-us {
+    width: 100%; /* Full width for smaller screens */
+    flex-direction: column;
+    align-items: center; /* Center items */
+  }
+
+  .amenity-card {
+    width: 90%; /* Full width for amenity cards */
+  }
+
+  .spaces-room-card {
+    flex: 1 1 90%; /* Full width for space cards */
+  }
+}
+
+/* Additional responsiveness */
+@media screen and (max-width: 43.75em) {
+  .urban-logo {
+    width: 80%; /* Adjust logo size for smaller screens */
+  }
+
+  .about-textbox {
+    width: 100%; /* Full width for smaller screens */
+  }
+
+  .textbox {
+    width: 90%; /* Full width for hero section */
+  }
 }
